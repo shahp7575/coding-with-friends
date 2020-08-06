@@ -1,3 +1,10 @@
+"""
+Trying a very simple approach.
+
+Runtime: 40 ms
+Memory Usage: 14.1 MB
+"""
+
 class Solution:
 
     """
@@ -7,10 +14,11 @@ class Solution:
 
     def mySqrt(self, x: int) -> int:
 
-        for i in range(1,x):
-            if i*i == x:
-                return i
+        # power raise to 0.5
+        result = x ** (1/2)
+
+        return int(result)
 
 if __name__ == "__main__":
     result = Solution()
-    print(result.mySqrt(x=4))
+    print(result.mySqrt(x=10202))
