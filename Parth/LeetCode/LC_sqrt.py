@@ -13,4 +13,4 @@ class Solution:
 
 if __name__ == "__main__":
     result = Solution()
-    print(result.mySqrt(x=5))
+    print(result.mySqrt(x=4))
