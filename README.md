@@ -9,3 +9,4 @@ All-in-one repository where friends can collaborate or share their work/projects
 
 #### LeetCode Best Solution/Explanation
 - Good explanation of linked lists with *dummy* - https://leetcode.com/problems/merge-two-sorted-lists/discuss/759870/Python3-Solution-with-a-Detailed-Explanation-dummy-explained
+    - YouTube : https://www.youtube.com/watch?v=GfRQvf7MB3k
