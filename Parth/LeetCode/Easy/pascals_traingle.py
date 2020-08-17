@@ -1,3 +1,8 @@
+"""
+Runtime: 32 ms
+Memory: 13.8 MB
+"""
+
 from typing import List
 
 class Solution:
