@@ -1,5 +1,5 @@
 """
-Runtime: 136 ms
+Runtime: 104 ms
 Memory: 33 MB
 """
 from typing import List
@@ -33,6 +33,6 @@ class Solution:
 if __name__ == "__main__":
 
     result = Solution()
-    nums = [1,2,3,4,5,6]
-    k = 11
+    nums = [1]
+    k = 1
     print(result.rotate(nums, k))
