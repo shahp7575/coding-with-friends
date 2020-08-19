@@ -8,7 +8,6 @@ class Solution:
 
         ALPHABETS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-        if(n^(0.5))
         print("DIFF: ", n-26)
         k = (n-1) % 26
         print("K: ", k)
