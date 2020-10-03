@@ -24,7 +24,10 @@ class Solution:
         return res
 
     def dfs(self, s, idx, path, res):
-
+        print(s)
+        print("idx -->", idx)
+        print("Path -->", path)
+        print("Res -->", res)
         if idx > 4:
             return
         if idx == 4 and not s:
