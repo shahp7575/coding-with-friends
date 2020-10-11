@@ -1,5 +1,5 @@
 """
-Runtime: 920 ms
+Runtime: 116 ms
 Memory: 14.1 MB
 """
 
@@ -19,20 +19,28 @@ class Solution:
         res = []
         candidates.sort()
         self.target = target
+        self.idx = 0
         self.dfs(candidates, [], res)
         return res
 
     def dfs(self, candidates, path, res):
 
+        print("Nums -->", candidates)
+        print("Path -->", path)
+        print("Result -->", res)
+        print()
+
         if sum(path) > self.target:
             return
 
-        if sum(path) == self.target and path not in res:
+        if sum(path) == self.target:
             res.append(path)
             return
 
-        for i in range(len(candidates)):
+        for i in range(self.idx, len(candidates)):
 
+            if i > self.idx and candidates[i] == candidates[i-1]:
+                continue
             self.dfs(candidates[i+1:], path + [candidates[i]], res)
 
 
