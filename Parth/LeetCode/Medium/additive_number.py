@@ -1,3 +1,7 @@
+"""
+INCOMPLETE!
+"""
+
 class Solution:
 
     """
@@ -11,20 +15,18 @@ class Solution:
         return res
 
     def dfs(self, num, path, res):
-        add = sum([int(i) for i in path])
+        add = sum(path)
         print("Path.. ", path)
         print("NUM... ", num)
-        print("ADD.. ", num[:len(path)-1])
-        print("SUM.. ", add)
+        print("First.. ", num[:len(path)-1])
+        print("RES ", res)
         print()
-        if add == float(num[:len(path)-1]):
-            print("IT came here")
-            res.append(path)
-            path = []
-            return
 
         for i in range(len(num)):
-            self.dfs(num[i+1:], path + [num[i]], res)
+            if sum(path) == int(float(num[:len(path)-1])):
+                res.append(path)
+                return
+            self.dfs(num[i+1:], path + [int(num[i])], res)
 
 
 if __name__ == "__main__":
