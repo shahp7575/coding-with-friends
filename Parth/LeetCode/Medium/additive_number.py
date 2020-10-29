@@ -10,23 +10,31 @@ class Solution:
 
     def isAdditiveNumber(self, num: str) -> bool:
 
-        res = []
+        res = True
         self.dfs(num, [], res)
         return res
 
     def dfs(self, num, path, res):
-        add = sum(path)
+
         print("Path.. ", path)
         print("NUM... ", num)
-        print("First.. ", num[:len(path)-1])
         print("RES ", res)
         print()
 
+        if str(sum(path)) == num[:len(path)-1]:
+            #res.append(path)
+            path = path[1:]
+            res = True
+
+        if len(num) == 0:
+            res = False
+            return
+
         for i in range(len(num)):
-            if sum(path) == int(float(num[:len(path)-1])):
-                res.append(path)
-                return
-            self.dfs(num[i+1:], path + [int(num[i])], res)
+            
+            if res:
+
+                self.dfs(num[i+1:], path + [int(num[i])], res)
 
 
 if __name__ == "__main__":
