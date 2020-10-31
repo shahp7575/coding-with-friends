@@ -10,9 +10,9 @@ class Solution:
 
     def isAdditiveNumber(self, num: str) -> bool:
 
-        res = True
+        res = []
         self.dfs(num, [], res)
-        return res
+        return len(res) > 0
 
     def dfs(self, num, path, res):
 
@@ -21,26 +21,28 @@ class Solution:
         print("RES ", res)
         print()
 
-        if str(sum(path)) == num[:len(path)-1]:
-            #res.append(path)
-            path = path[1:]
-            res = True
-
-        if len(num) == 0:
-            res = False
-            return
 
         for i in range(len(num)):
             
-            if res:
+            if num[0] == '0' and i > 0:
+                break
+            
+            if len(path) > 1 and str(sum(path)) != num[:len(str(sum(path)))]:
+                continue
 
-                self.dfs(num[i+1:], path + [int(num[i])], res)
+            if len(path) > 1 and str(sum(path)) == num[:len(str(sum(path)))]:
+                res.append(path)
+                path = path[1:]
+
+            if self.dfs(num[i+1:], path + [int(num[:i+1])], res):
+                return True
+            
 
 
 if __name__ == "__main__":
 
     result = Solution()
-    num = '112358'
+    num = '120122436'
     print(result.isAdditiveNumber(num))
 
         
