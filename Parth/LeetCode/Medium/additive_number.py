@@ -33,16 +33,19 @@ class Solution:
             if len(path) > 1 and str(sum(path)) == num[:len(str(sum(path)))]:
                 res.append(path)
                 path = path[1:]
+                num = num[len(path)+1:]
 
-            if self.dfs(num[i+1:], path + [int(num[:i+1])], res):
+            if num == '':
                 return True
+
+            self.dfs(num[i+1:], path + [int(num[:i+1])], res)
             
 
 
 if __name__ == "__main__":
 
     result = Solution()
-    num = '120122436'
+    num = '12312413'
     print(result.isAdditiveNumber(num))
 
         
