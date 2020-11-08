@@ -1,36 +1,32 @@
-class Solution:
+"""
+Runtime: 28 ms
+Memory: 14.1 MB
+"""
+
+class Solution(object):
 
     """
-
+    Problem # 357
+    Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10n.
     """
 
-    def countNumbersWithUniqueDigits(self, n: int) -> int:
-        
-        count = 0
-        res = []
-        self.dfs([0,1,2,3,4,5,6,7,8,9], [], res)
-        return res
-
-    def dfs(self, n, path, res):
-
-        print(n)
-        print(path)
-        print(res)
-        print()
-
-        for i in range(10):
-
-            if n[i] != n[i+1] and n[0] != 0:
-                res.append(path)
+    def countNumbersWithUniqueDigits(self, n):
+    
+        if n == 0:
+            return 1
+    
+        total, start = 10, 9
+    
+        for i in range(1, n):
             
-            self.dfs(n[i+1:], [n[i]] + [n[i+1]], res)
-
-        return n
+            start = start*(10-i)
+            total += start
+            print(start, total)
+        return total
 
 
 if __name__ == "__main__":
 
     result = Solution()
-    n = 2
+    n = 3
     print(result.countNumbersWithUniqueDigits(n))
-        
