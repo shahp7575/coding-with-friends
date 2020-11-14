@@ -24,15 +24,12 @@ class Solution:
 
         if len(path) == 3 and sum(path) == 0 and path not in res:
             res.append(path)
-            path = []
+            path = path[1:]
         elif len(path) == 3 and sum(path) != 0:
-            path = []
+            path = path[1:]
 
         for i in range(len(nums)):
             
-            if sum(path) > 0:
-                print("Continuing...")
-                continue
             self.dfs(nums[i+1:], path + [nums[i]], res)
 
     
